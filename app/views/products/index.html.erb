@@ -1,0 +1,14 @@
+<h1>Products</h1>
+
+  
+ <div class="container">
+ 	<div class="col-xs-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      </div>
+   <div class="col-xs-6 col-xs-offset-3">
+    <% @product.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
+    <% end %>
+  </div>
+   
+  </div>
