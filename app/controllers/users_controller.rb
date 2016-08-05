@@ -15,12 +15,14 @@ class UsersController < ApplicationController
       flash[:success] = "user has been added!"
       redirect_to new
     else
-      render 'new'
+      flash[:errors] = "user has not  been added Please ensure valid data!"
+            render 'new'
+
     end
    end
   def show
     if current_user.admin == false
-      redirect_to products_path
+      redirect_to products_path!
     end 
   end 
   private

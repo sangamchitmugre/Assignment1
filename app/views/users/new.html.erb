@@ -5,18 +5,23 @@
   <div class="col-md-6 col-md-offset-3">
    
     <%= form_for(@user) do |f| %>
-     <%= f.label :name %> 
+    <table>
+     <tr> 
+     <td><%= f.label :name %></td> 
       
-      <%= f.text_field :name %>
+     <td> <%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
       
-      <%= f.label :email %>
+     <td> <%= f.email_field :email %></td>
+   </tr>
+    <tr>
+      <td><%= f.label :password %></td>
+      <td><%= f.password_field :password %></td>
       
-      <%= f.email_field :email %>
-    
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      
-          <%= f.submit "Create my account", class: "btn btn-primary" %>
+          <tr><td><%= f.submit "Create my account", class: "btn btn-primary" %></td></tr>
+        </table>
     <% end %>
   
   </div>

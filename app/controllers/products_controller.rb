@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :check_logged_in?, only: :new
+  before_filter :check_logged_in?, only: [:new, :index, :create]
 	def index
 	  @product=Product.all 
     @order_item = current_order.order_items.new
@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
       flash[:success] = "Product has been added!"
       redirect_to new
     else
+      flash[:error] = "Error please ensure valid data"
       render 'new'
     end
     end
