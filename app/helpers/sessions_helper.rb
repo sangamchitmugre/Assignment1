@@ -15,11 +15,7 @@ module SessionsHelper
   def check_logged_in?
     if logged_in?
       @current_user = current_user
-      if @current_user.admin == true
-        render 'welcome'
-      else
-        render 'product'
-      end
+      redirect_to @current_user
     end
   end
 end

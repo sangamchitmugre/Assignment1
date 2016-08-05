@@ -24,8 +24,8 @@
           </li>
         <% else %>
         <li><%= link_to "Home",   users_path  %></li>
-            <li><%= link_to "Help",  users_help_path %></li>
-          <li><%= link_to "Log in", sessions_new_path %></li>
+            <li><%#= link_to "Help",  users_help_path %></li>
+          <li><%= link_to "Log in", login_path %></li>
         <% end %>
        </ul>
     </nav>

@@ -55,10 +55,11 @@ ActiveRecord::Schema.define(version: 20160804054942) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "password"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
-    t.boolean  "admin"
+    t.boolean  "admin",           default: false
     t.integer  "credit_point",    default: 1000
   end
 
