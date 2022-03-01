@@ -1,0 +1,29 @@
+resources:
+  repositories:
+  - repository: VulnerableCode
+    type: git
+    name: JavaVulnerableCode
+    ref: master
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    steps:
+    - task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
+      inputs:
+        repository: VulnerableCode
+    - task: YashhJaggi.cxsast.cx-scan-task.Application security testing@2022
+      displayName: 'Application security testing'
+      inputs:
+        projectName: 'Sprint 11'
+        enableProxy: false
+        enableSastScan: true
+        CheckmarxService: '9.4SAST'
+        fullTeamName: '/CxServer'
+        incScan: false
+        projectcustomfields: 'Key1:Value100'
+        customfields: 'Key1:Value10'
+        comment: 'Generating YAML File'
+        generatePDFReport: true
+        enableDependencyScan: false
+
